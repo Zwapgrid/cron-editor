@@ -4,8 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { TimePickerComponent } from './time-picker.component';
 
 describe('TimePickerComponent', () => {
-  let component: TimePickerComponent;
-  let fixture: ComponentFixture<TimePickerComponent>;
+    let component: TimePickerComponent;
+    let fixture: ComponentFixture<TimePickerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -27,7 +27,7 @@ describe('TimePickerComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

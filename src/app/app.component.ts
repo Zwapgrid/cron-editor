@@ -4,9 +4,9 @@ import { CronOptions } from 'projects/cron-editor/src/lib/CronOptions';
 import { Localizations } from 'projects/cron-editor/src/lib/Localizations';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   // Hangfire 1.7+ compatible expression: '3 2 12 1/1 ?'

@@ -51,8 +51,8 @@ export abstract class CronEditorComponent implements OnInit, OnChanges {
     this.validation.isValid = true;
     this.validation.errorMessage = '';
 
-    this.handleModelChange(this.cron);
-  }
+        this.handleModelChange(this.cron);
+    }
 
   public ngOnChanges(changes: SimpleChanges) {
     const newCron = changes['cron'];
@@ -111,9 +111,9 @@ export abstract class CronEditorComponent implements OnInit, OnChanges {
       return;
     }
 
-    const cronParts = cron.split(' ');
+        const cronParts = cron.split(' ');
 
-    let expected = 5;
+        let expected = 5;
 
     if (!this.localOptions.removeSeconds) {
       expected++;

@@ -7,9 +7,9 @@ import { AppComponent } from './app.component';
 import { CronEditorModule } from '../../projects/cron-editor/src/lib/cron-editor.module';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, FormsModule, CommonModule, CronEditorModule],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [AppComponent],
+    imports: [BrowserModule, FormsModule, CommonModule, CronEditorModule],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

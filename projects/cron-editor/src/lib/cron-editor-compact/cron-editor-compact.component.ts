@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 import { CronEditorComponent } from '../cron-editor.component';
 import { CronFormat } from '../CronOptions';
@@ -59,10 +59,22 @@ export class CronEditorCompactComponent extends CronEditorComponent implements O
 
   public ngOnInit() {
     this.setTypes();
+    let type = this.options.defaultTab || this.repeatType;
+
+    if(type && !(this.types.indexOf(type)<0)){
+        this.repeatType = type;
+    }
+    else{
+        throw Error('Incorrect type '+type);
+    }
   }
 
   onEveryChange(): void {
     this.updateCron();
+  }
+
+  constructor(private cd: ChangeDetectorRef) {
+      super();
   }
 
   onTypeChange(typeValue: string): void {
@@ -99,11 +111,26 @@ export class CronEditorCompactComponent extends CronEditorComponent implements O
   }
 
   setTypes(): void {
-    const types = ['minutes',
-      'hours',
-      'days',
-      'weeks',
-      'months'];
+    const types = [];
+
+      if (!this.options.hideMinutesTab) {
+        types.push('minutes');
+      }
+
+      if (!this.options.hideHourlyTab) {
+        types.push('hours');
+      }
+
+      if (!this.options.hideDailyTab) {
+        types.push('days');
+      }
+
+      if (!this.options.hideWeeklyTab) {
+        types.push('weeks');
+      }
+      if (!this.options.hideMonthlyTab) {
+        types.push('months');
+      }
 
     if (!this.options.removeYears) {
       types.push('years');
@@ -280,6 +307,10 @@ export class CronEditorCompactComponent extends CronEditorComponent implements O
     }
   }
 
+  onClick(){
+
+  }
+
   updateSelectEveryValues(typeValue: string) {
     var neweverySelectOptions = this.everySelectOptions[typeValue];
     var maxNewValue = neweverySelectOptions[neweverySelectOptions.length - 1];
@@ -287,6 +318,7 @@ export class CronEditorCompactComponent extends CronEditorComponent implements O
     this.currentOptions = this.everySelectOptions[typeValue];
     if (maxNewValue < curValue) {
       this.every = 1;
+      this.onEveryChange();
     }
   }
 

@@ -57,6 +57,7 @@ export class Localizations {
     third: 'third',
     fourth: 'fourth',
     fifth: 'fifth',
+    repeatEvery: 'Repeat every',
     last: 'last',
     ordinalSuffix(value: string) {
       if (value.length > 1) {
@@ -114,6 +115,7 @@ export class Localizations {
     cronExpressionCannotBeNull: 'Cron-uttryck kan inte vara tomt',
     invalidCronExpression: 'Ogiltigt cron-uttryck, det måste innehålla {expected} segment',
     couldNotParseExpression: 'Lyckades inte tolka cron-uttryck',
+    repeatEvery: 'Upprepa varje',
     lastDay: 'sista dagen',
     lastWeekday: 'sista arbetsdagen',
     firstWeekday: 'första arbetsdagen',

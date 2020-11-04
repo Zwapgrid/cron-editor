@@ -60,7 +60,7 @@ export abstract class CronEditorComponent implements OnInit, OnChanges {
       this.handleModelChange(this.cron);
     }
   }
-  
+
   public dayDisplay(day: string): string {
     return this.l(Days[day]);
   }
@@ -96,7 +96,7 @@ export abstract class CronEditorComponent implements OnInit, OnChanges {
     } else {
       this.isDirty = false;
     }
-    
+
     this.validate(cron);
 
     this.setValues(cron);
@@ -131,9 +131,9 @@ export abstract class CronEditorComponent implements OnInit, OnChanges {
     this.validation.isValid = true;
     return;
   }
-  
+
   protected abstract setValues(cron: string);
-  
+
   protected getHourType(hour: number) {
     return this.localOptions.use24HourTime ? undefined : (hour >= 12 ? 'PM' : 'AM');
   }

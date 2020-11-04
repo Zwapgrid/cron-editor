@@ -1,8 +1,8 @@
 <div class="form-inline">
-  <div class="form-group">Repeat every</div>
+  <div class="form-group">{{l('repeatEvery')}}</div>
 
   <div class="form-group" *ngIf="repeatType !== 'weeks'">
-    <select class="minutes form-control-sm form-control input-sm" (change)="onEveryChange()"
+    <select class="minutes form-control-sm form-control input-sm" (change)="onEveryChange()" [(ngModel)]="every"
             [ngClass]="options.formSelectClass">
       <option *ngFor="let everyValue of currentOptions" [ngValue]="everyValue" [selected]='every==everyValue'>
         {{everyValue}}
@@ -10,15 +10,16 @@
     </select>
   </div>
   <div class="form-group">
-    <select class="form-control-sm form-control input-sm"
+    <select *ngIf="types.length>1" class="form-control-sm form-control input-sm"
             [(ngModel)]="repeatType"
             (ngModelChange)="onTypeChange($event)">
       <option *ngFor="let type of types" [ngValue]="type">
         {{l(type)}}
       </option>
     </select>
+    <span *ngIf="types.length==1">{{l(types[0])}}</span>
   </div>
-  
+
   <ng-container *ngIf="repeatType === 'hours'">
     <div class="form-group">{{l('onMinute')}}</div>
     <div class="form-group">

@@ -14,6 +14,7 @@ export interface CronOptions {
     hideMonthlyTab?: boolean;
     hideYearlyTab?: boolean;
     hideAdvancedTab?: boolean;
+    defaultTab?:string,
     format?: CronFormat;
 
     /** hides the Seconds UI form element */
@@ -101,6 +102,7 @@ export interface Localization {
   cronExpressionCannotBeNull?: string;
   invalidCronExpression?: string;
   couldNotParseExpression?: string;
+  repeatEvery?:string;
 
   ordinalSuffix?(value: string): string;
 }

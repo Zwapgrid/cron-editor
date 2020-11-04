@@ -16,7 +16,7 @@ export class AppComponent {
 
   }
 
-  public cronExpression = '0 12 1W 1/1 ?';
+  public cronExpression = '*/2 * * * *';
   public isCronDisabled = false;
   public cronOptions: CronOptions = {
     defaultTime: '10:00:00',
@@ -24,8 +24,13 @@ export class AppComponent {
     hideSeconds: true,
     removeSeconds: true,
     removeYears: true,
-    // Uncomment below line to set swedish localization
-    // localizations: Localizations.Swedish
+    hideMinutesTab: true,
+    hideHourlyTab: true,
+    hideDailyTab: true,
+    hideMonthlyTab: true,
+    hideWeeklyTab: false,
+    defaultTab:'weeks',
+    localizations: Localizations.English
   };
   public style = 'compact';
   public language = 'English';

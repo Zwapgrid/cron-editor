@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { CronEditorComponent } from '../cron-editor.component';
 import { CronFormat } from '../CronOptions';
@@ -71,10 +71,6 @@ export class CronEditorCompactComponent extends CronEditorComponent implements O
 
   onEveryChange(): void {
     this.updateCron();
-  }
-
-  constructor(private cd: ChangeDetectorRef) {
-      super();
   }
 
   onTypeChange(typeValue: string): void {

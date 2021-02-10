@@ -21,14 +21,16 @@
   </div>
 
   <ng-container *ngIf="repeatType === 'hours'">
-    <div class="form-group">{{l('onMinute')}}</div>
-    <div class="form-group">
-      <select class="form-control-sm form-control input-sm"
-              [disabled]="disabled || repeatType !== 'hours'"
-              (change)="onTimeChange()"
-              [(ngModel)]="time.minutes">
-        <option *ngFor="let minute of selectOptions.fullMinutes" [ngValue]="minute">{{minute}}</option>
-      </select>
+    <div class="form-inline form-group">
+      <div class="form-group">{{l('onMinute')}}:</div>
+      <div class="form-group">
+        <select class="form-control-sm form-control input-sm"
+                [disabled]="disabled || repeatType !== 'hours'"
+                (change)="onTimeChange()"
+                [(ngModel)]="time.minutes">
+          <option *ngFor="let minute of selectOptions.fullMinutes" [ngValue]="minute">{{minute}}</option>
+        </select>
+      </div>
     </div>
     <div class="form-group" *ngIf="!options.hideSeconds">{{l('andSecond')}}</div>
     <div class="form-group">
@@ -43,19 +45,21 @@
   </ng-container>
 
   <ng-container *ngIf="repeatType === 'days'">
-    <div class="form-group">{{l('at')}}</div>
-    <div class="form-group">
-      <cron-time-picker [disabled]="disabled || repeatType !== 'days'"
-                        (change)="onTimeChange()"
-                        [(time)]="time"
-                        [use24HourTime]="options.use24HourTime"
-                        [hideSeconds]="options.hideSeconds">
-      </cron-time-picker>
+    <div class="form-inline form-group">
+      <div class="form-group">{{l('at')}}:</div>
+      <div class="form-group">
+        <cron-time-picker [disabled]="disabled || repeatType !== 'days'"
+                          (change)="onTimeChange()"
+                          [(time)]="time"
+                          [use24HourTime]="options.use24HourTime"
+                          [hideSeconds]="options.hideSeconds">
+        </cron-time-picker>
+      </div>
     </div>
   </ng-container>
 
   <ng-container *ngIf="repeatType === 'weeks'">
-    <div class="form-group">{{l('on')}}</div>
+    <div class="form-group">{{l('on')}}:</div>
 
     <div class="form-group">
       <div class="form-check form-check-inline checkbox-inline">
@@ -94,40 +98,47 @@
       </div>
     </div>
 
-    <div class="form-group">{{l('at')}}</div>
+    <div class="form-inline form-group">
+      <div class="form-group">{{l('at')}}:</div>
 
-    <div class="form-group">
-      <cron-time-picker [disabled]="disabled || repeatType !== 'weeks'"
-                        (change)="onTimeChange()"
-                        [(time)]="time"
-                        [use24HourTime]="options.use24HourTime"
-                        [hideSeconds]="options.hideSeconds">
-      </cron-time-picker>
+      <div class="form-group">
+        <cron-time-picker [disabled]="disabled || repeatType !== 'weeks'"
+                          (change)="onTimeChange()"
+                          [(time)]="time"
+                          [use24HourTime]="options.use24HourTime"
+                          [hideSeconds]="options.hideSeconds">
+        </cron-time-picker>
+      </div>
     </div>
+  
   </ng-container>
 
   <ng-container *ngIf="repeatType === 'months'">
-    <div class="form-group">{{l('onThe')}}</div>
-    <div class="form-group">
-      <select class="form-control-sm form-control input-sm"
-              [disabled]="disabled || repeatType !== 'months'"
-              (change)="onDayOfMonthChange()"
-              [(ngModel)]="onDayOfMonth"
-              [ngClass]="options.formSelectClass">
+    <div class="form-inline form-group">
+      <div class="form-group">{{l('onThe')}}:</div>
+      <div class="form-group">
+        <select class="form-control-sm form-control input-sm"
+                [disabled]="disabled || repeatType !== 'months'"
+                (change)="onDayOfMonthChange()"
+                [(ngModel)]="onDayOfMonth"
+                [ngClass]="options.formSelectClass">
 
-        <option *ngFor="let monthDaysWithLast of selectOptions.monthDaysWithLasts" [ngValue]="monthDaysWithLast">{{monthDayDisplay(monthDaysWithLast)}}</option>
-      </select>
+          <option *ngFor="let monthDaysWithLast of selectOptions.monthDaysWithLasts" [ngValue]="monthDaysWithLast">{{monthDayDisplay(monthDaysWithLast)}}</option>
+        </select>
+      </div>
     </div>
 
-    <div class="form-group">{{l('at')}}</div>
-    <div class="form-group">
-      <cron-time-picker [disabled]="disabled || repeatType !== 'months'"
-                        (change)="onTimeChange()"
-                        [(time)]="time"
-                        [use24HourTime]="options.use24HourTime"
-                        [hideSeconds]="options.hideSeconds">
-      </cron-time-picker>
-    </div>
+    <div class="form-inline form-group">
+      <div class="form-group">{{l('at')}}:</div>
+      <div class="form-group">
+        <cron-time-picker [disabled]="disabled || repeatType !== 'months'"
+                          (change)="onTimeChange()"
+                          [(time)]="time"
+                          [use24HourTime]="options.use24HourTime"
+                          [hideSeconds]="options.hideSeconds">
+        </cron-time-picker>
+      </div>
+    </div> 
   </ng-container>
 
   <ng-container *ngIf="repeatType === 'years'">

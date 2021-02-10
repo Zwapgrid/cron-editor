@@ -59,6 +59,10 @@ export class Localizations {
     fifth: 'fifth',
     repeatEvery: 'Repeat every',
     last: 'last',
+    hours: 'hours',
+    days: 'days',
+    weeks: 'weeks',
+    months: 'months',
     ordinalSuffix(value: string) {
       if (value.length > 1) {
         const secondToLastDigit = value.charAt(value.length - 2);
@@ -138,6 +142,10 @@ export class Localizations {
     fourth: 'fjärde',
     fifth: 'femte',
     last: 'sista',
+    hours: 'timme',
+    days: 'dag',
+    weeks: 'vecka',
+    months: 'månad',
     ordinalSuffix(value: string) {
       switch (value) {
         case '1':

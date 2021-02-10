@@ -142,10 +142,10 @@ export class Localizations {
     fourth: 'fjärde',
     fifth: 'femte',
     last: 'sista',
-    hours: 'timme',
-    days: 'dag',
-    weeks: 'vecka',
-    months: 'månad',
+    hours: 'timmar',
+    days: 'dagar',
+    weeks: 'veckor',
+    months: 'månader',
     ordinalSuffix(value: string) {
       switch (value) {
         case '1':

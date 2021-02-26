@@ -22,13 +22,5 @@ This library is published as a [npm package](https://www.npmjs.com/package/cron-
 Licensed under the MIT license
 
 ## Update package
-1) Run command
-`pm login --registry=https://www.myget.org/F/zwapgrid/npm/`
-Use your credentials.
-
-2) Run command
-`npm config set registry https://www.myget.org/F/zwapgrid/npm/`
-3) Run command
-  `npm publish`
-
-
+1) Run command (using your own MyGet credentials):
+npm publish --registry=https://<login>:<password>@myget.org/F/zwapgrid/npm/
